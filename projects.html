@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Solid State by HTML5 UP</title>
+		<title>Projects</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -18,110 +18,189 @@
 			<div id="page-wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">Solid State</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
+				<header id="header" class="alt">
+					<h1><a href="index.html">Solid State</a></h1>
+					<nav>
+						<a href="#menu">Menu</a>
 					</nav>
+				</header>
+
+			<!-- Menu -->
+				<nav id="menu">
+					<div class="inner">
+						<h2>Menu</h2>
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="AboutMe.html">About Me</a></li>
+							<li><a href="projects.html">Projects</a></li>
+						</ul>
+						<a href="#" class="close">Close</a>
+					</div>
+				</nav>
 
 				<!-- Wrapper -->
-					<section id="wrapper">
+					<section id="banner">
 						<header>
 							<div class="inner">
-								<h2>Generic</h2>
-								<p>Phasellus non pulvinar erat. Fusce tincidunt nisl eget ipsum.</p>
+								<h2>Projects</h2>
+								<p>Here you can see all of my projects.</p>
 							</div>
 						</header>
+					</section>
 
 						<!-- Content -->
-							<div class="wrapper">
-								<div class="inner">
+						<section id="myth" class="wrapper style3">
+							<div class="inner">
+								<section>
+									<h4>Mythe</h4>
+									<p><span class="image left"><img src="images/myth.jpg" alt="" /><br></br></span>I personally worked mostly on a movement, UI, the sound and ambience on top of that helping where I could with traps and map making</p>
+									<p>I coded the pendulum trap, UI and the movement. Of these im most proud of the pendulum trap. Altho it has the least script its also just a neat little script.</p>
+									<p>There were some hiccups with making this but overall im happy with what we achieved. We had good teamwork, met daily and had good morale throughout the entire project.</p>
+									<p>On top of that our planning through trello was done very well</p>
+									<p>Heres a sample of the code</p>
+									<pre><code>void Update()
+{
+var hinge = GetComponent<HingeJoint>();
 
-									<h3 class="major">Lorem ipsum dolor</h3>
-									<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+var motor = hinge.motor;
+timeLeft -= Time.deltaTime;
+if(timeLeft < 0)
+{
+	motor.targetVelocity = turned ? 200 : -200;
+	turned = !turned;
+	audioData.Play(0);
 
-									<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
-
-									<h3 class="major">Vitae phasellus</h3>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-
-								</div>
+	timeLeft = resetTime;
+}
+hinge.motor = motor;
+hinge.useMotor = true;
+}</code></pre>
+									<p>On top of that you had the <a href="https://github.com/TheExiledCat/MYTHE/tree/master/Mythe/Assets/Scripts/UI%20and%20Camera">UI mostly done by me</a> and the <a href="https://github.com/TheExiledCat/MYTHE/tree/master/Mythe/Assets/Scripts/Player">movement also mostly done by me</a>.</p>
+									<a href="https://github.com/TheExiledCat/MYTHE" class="special">Github</a>
+								</section>
 							</div>
+						</section>
 
-					</section>
+						<section id="space" class="wrapper alt style1">
+							<div class="inner">
+								<section>
+									<h4>Space</h4>
+									<p><span class="image right"><img src="images/space.jpg" alt="" /><br></br></span>The progress on this project was without a doubt tough. With a project that was supposed to have a minimum of 2 developers I ended up being the only one and I very much felt unprepared and incapable at the beginning.</p>
+									<p>However through these hardships I ended up learning a lot by having to do all the coding myself</p>
+									<p>The end result could be better but I am happy with the end result.</p>
+									<p>Heres a sample of the code</p>
+									<pre><code>public void Attract (Transform body)
+{
+	Vector2 gravityUp = (body.position - transform.position).normalized;
+	Vector2 bodyUp = body.up;
+
+	body.GetComponent<Rigidbody2D>().AddForce(gravityUp * gravity);
+
+	Quaternion targetRotation = Quaternion.FromToRotation(bodyUp, gravityUp) * body.rotation;
+	body.rotation = Quaternion.Slerp(body.rotation, targetRotation, 500 * Time.deltaTime);
+}</code></pre>
+										<p>The largest fault I find in myself is that at the time I had little knowledge of how github worked and ended up losing the project several times due to a laptop that was at continues risk of crashing</p>
+										<a href="https://github.com/HBlueRainDrop/spacegameartists" class="special">Github</a>
+								</section>
+							</div>
+						</section>
+
+						<section id="vertical" class="wrapper style4">
+							<div class="inner">
+								<section>
+									<h4>Vertical Slice</h4>
+									<p><span class="image left"><img src="images/vertical.jpg" alt="" /><br></br></span>This project was a lot of fun to work on and had great people in it. Our goal was to remake the character selection screen from warhammer with working hair</p>
+									<p>I personally only worked on getting the UI to work.</p>
+									<p>We ended up finishing it and making it work well within timeframe and I learned a lot about teamwork in this project and where to improve</p>
+									<p>Heres a sample of the code</p>
+									<pre><code>if (hair == null)
+{
+	// spawns hair at the right position and with the right rotation
+	hair = Instantiate(hairStyle[0], hairSpawnPoint, false);
+	hair.transform.position = hairSpawnPoint.position;
+	hair.transform.rotation = hairSpawnPoint.rotation;
+	//  hair.AddComponent<RotateChar>();
+	//  Debug.Log("true");
+}
+else
+{
+	Destroy(hair);
+	HairSelection();
+}</code></pre>
+									<a href="https://github.com/ihartog/Vertical-slice/" class="special">Github</a>
+								</section>
+							</div>
+						</section>
+
+						<section id="environment" class="wrapper alt style6">
+							<div class="inner">
+								<section>
+									<h4>Environment Generator</h4>
+									<p><span class="image right"><img src="images/map.jpg" alt="" /><br></br></span>This is a self project which I did in an attempt to just generally increase my knowledge of coding.</p>
+									<p>With the goal being a randomly generated map with clouds and birds flying around I started with looking up how to generate the map itself</p>
+									<p>I found out that using randomly generated noise maps which could then be transformed into a mesh map would work great and am currently learning how to use it properly after which I want to move on to the randomly generated clouds and eventually the randomly moving birds.</p>
+									<p>Heres a sample of the code</p>
+									<pre><code>{
+	float sampleX = (x - halfWidth) / scale * frequency + octaveOffsets[i].x;
+	float sampleY = (y - halfHeight) / scale * frequency + octaveOffsets[i].y;
+
+	float perlinValue = Mathf.PerlinNoise(sampleX, sampleY * 2 - 1);
+	noiseHeight += perlinValue * amplitude;
+
+	amplitude *= persistance;
+	frequency *= lacunarity;
+}</code></pre>
+										<p>I am still learning and following tutorials to truly figure out how everything works. But regardless I am positive I could use this to make something cool and have a learning experience.</p>
+										<a href="https://github.com/HWSolomon/Environment" class="special">Github</a>
+								</section>
+							</div>
+						</section>
 
 				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
+				<section id="footer">
+					<div class="inner">
+						<h2 class="major">Get in touch</h2>
+						<p>You can contact me through the options down below or look at my social media.</p>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
 								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="4"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send Message" /></li>
 							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+						</form>
+						<ul class="contact">
+							<li class="icon solid fa-home">
+								Untitled Inc<br />
+								1234 Somewhere Road Suite #2894<br />
+								Nashville, TN 00000-0000
+							</li>
+							<li class="icon solid fa-phone">(000) 000-0000</li>
+							<li class="icon solid fa-envelope"><a href="mailto:herbert_wink@hotmail.com">herbert_wink@hotmail.com</a></li>
+							<li class="icon brands fa-twitter"><a href="https://twitter.com/HerbertWink">https://twitter.com/HerbertWink</a></li>
+							<li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/herbert.wink.5">https://www.facebook.com/herbert.wink.5</a></li>
+							<li class="icon brands fa-instagram"><a href="https://www.instagram.com/brdsolo/">https://www.instagram.com/brdsolo/</a></li>
+							<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/herbert-wink-044547175/">https://www.linkedin.com/in/herbert-wink-044547175/</a></li>
 
-			</div>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</section>
+
+		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
