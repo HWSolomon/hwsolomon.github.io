@@ -1,4 +1,4 @@
-	<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <!--
 	Solid State by HTML5 UP
 	html5up.net | @ajlkn
@@ -54,9 +54,8 @@
 							<div class="inner">
 								<section>
 									<h4>Mythe</h4>
-									<p><span class="image left"><img src="images/myth.jpg" alt="" /><br></br></span>I personally worked mostly on a movement, UI, the sound and ambience on top of that helping where I could with traps and map making</p>
-									<p>I coded the pendulum trap, UI and the movement. Of these im most proud of the pendulum trap. Altho it has the least script its also just a neat little script.</p>
-									<p>There were some hiccups with making this but overall im happy with what we achieved. We had good teamwork, met daily and had good morale throughout the entire project.</p>
+									<p><span class="image left"><img src="images/mythegif.gif" alt="" /><br></br></span>I personally worked mostly on the player, UI, the sound and ambience on top of that helping where I could with traps and map making</p>
+									<p>This team had great teamwork and communication and we hardly had any real issues while making this game.</p>
 									<p>On top of that our planning through trello was done very well</p>
 									<p>Heres a sample of the code</p>
 									<pre><code>void Update()
@@ -76,7 +75,7 @@ if(timeLeft < 0)
 hinge.motor = motor;
 hinge.useMotor = true;
 }</code></pre>
-									<p>On top of that you had the <a href="https://github.com/TheExiledCat/MYTHE/tree/master/Mythe/Assets/Scripts/UI%20and%20Camera">UI mostly done by me</a> and the <a href="https://github.com/TheExiledCat/MYTHE/tree/master/Mythe/Assets/Scripts/Player">movement also mostly done by me</a>.</p>
+									<p>Above you see a simple trap script I made of a swinging axe. The axe swings with its velocity towards one side until the unity object no longer can and then after a set amount of time swings back in a loop.</a>.</p>
 									<a href="https://github.com/TheExiledCat/MYTHE" class="special">Github</a>
 								</section>
 							</div>
@@ -86,20 +85,32 @@ hinge.useMotor = true;
 							<div class="inner">
 								<section>
 									<h4>Space</h4>
-									<p><span class="image right"><img src="images/space.jpg" alt="" /><br></br></span>The progress on this project was without a doubt tough. With a project that was supposed to have a minimum of 2 developers I ended up being the only one and I very much felt unprepared and incapable at the beginning.</p>
-									<p>However through these hardships I ended up learning a lot by having to do all the coding myself</p>
-									<p>The end result could be better but I am happy with the end result.</p>
+									<p><span class="image right"><img src="images/spacegif.gif" alt="" /><br></br></span>This project was purely coded by me which in my first year was a real challenge but I ended up making something that I was quite happy with.</p>
+									<p>By having done most of the coding myself I learned a lot about organizing my work and how important that is on top of making sure there's always a copy on github.</p>
+									<p>As it was my first project things were poorly planned but I did finish it on time and have rarely messed up with planning in a group since.</p>
 									<p>Heres a sample of the code</p>
 									<pre><code>public void Attract (Transform body)
+public float RotateSpeed = 5f;
+public float Radius = 0.1f;
+
+private Vector2 _centre;
+private float _angle;
+
+private void Start()
 {
-	Vector2 gravityUp = (body.position - transform.position).normalized;
-	Vector2 bodyUp = body.up;
+	_centre = transform.position;
+}
 
-	body.GetComponent<Rigidbody2D>().AddForce(gravityUp * gravity);
+private void Update()
+{
 
-	Quaternion targetRotation = Quaternion.FromToRotation(bodyUp, gravityUp) * body.rotation;
-	body.rotation = Quaternion.Slerp(body.rotation, targetRotation, 500 * Time.deltaTime);
+	_angle += RotateSpeed * Time.deltaTime;
+
+	var offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * Radius;
+	transform.position = _centre + offset;
 }</code></pre>
+									<p>This is how I made sure the comets spawned at random. This spawning point spins around the planet at an insane speed so the comets always come from a random location.</p>
+										<a href="https://github.com/HWSolomon/spacegame" class="special">Github</a>
 								</section>
 							</div>
 						</section>
@@ -108,24 +119,32 @@ hinge.useMotor = true;
 							<div class="inner">
 								<section>
 									<h4>Vertical Slice</h4>
-									<p><span class="image left"><img src="images/vertical.jpg" alt="" /><br></br></span>This project was a lot of fun to work on and had great people in it. Our goal was to remake the character selection screen from warhammer with working hair</p>
-									<p>I personally only worked on getting the UI to work.</p>
+									<p><span class="image left"><img src="images/wowgif.gif" alt="" /><br></br></span>The goal here was a lot less script intensive and a lot more about making it really feel like it was from World of Warcraft. Making sure the UI felt right that the character moved a little bit and more small stuff like that.</p>
+									<p>I personally only worked on getting the UI to work. A lot of work went into trying to get it just right.</p>
 									<p>We ended up finishing it and making it work well within timeframe and I learned a lot about teamwork in this project and where to improve</p>
 									<p>Heres a sample of the code</p>
-									<pre><code>if (hair == null)
+									<pre><code>void Number()
 {
-	// spawns hair at the right position and with the right rotation
-	hair = Instantiate(hairStyle[0], hairSpawnPoint, false);
-	hair.transform.position = hairSpawnPoint.position;
-	hair.transform.rotation = hairSpawnPoint.rotation;
-	//  hair.AddComponent<RotateChar>();
-	//  Debug.Log("true");
+	Destroy(GameObject.FindGameObjectWithTag("Number"));
+	Instantiate(FNumbers[HN], GameObject.FindGameObjectWithTag("SpawnPoint").transform);
+
+	if (hair == null)
+	{
+		hair = Instantiate(hairStyle[0], hairSpawnPoint, false);
+		hair.transform.position = hairSpawnPoint.position;
+		hair.transform.rotation = hairSpawnPoint.rotation;
+
+	}
+	else
+	{
+		Destroy(hair);
+		HairSelection();
+	}
+	//Debug.Log("efhkeh");
+	
 }
-else
-{
-	Destroy(hair);
-	HairSelection();
-}</code></pre>
+</code></pre>
+									<p>This gets called on every time a switch between hairs is made. It deletes the current hair and the instantiates the new hair and makes sure the correct one is selected.</p>
 									<a href="https://github.com/ihartog/Vertical-slice/" class="special">Github</a>
 								</section>
 							</div>
@@ -135,20 +154,23 @@ else
 							<div class="inner">
 								<section>
 									<h4>Environment Generator</h4>
-									<p><span class="image right"><img src="images/map.jpg" alt="" /><br></br></span>This is a self project which I did in an attempt to just generally increase my knowledge of coding.</p>
+									<p><span class="image right"><img src="images/envgif.gif" alt="" /><br></br></span>This is a self project which I did in an attempt to just generally increase my knowledge of coding.</p>
 									<p>With the goal being a randomly generated map with clouds and birds flying around I started with looking up how to generate the map itself</p>
 									<p>I found out that using randomly generated noise maps which could then be transformed into a mesh map would work great and am currently learning how to use it properly after which I want to move on to the randomly generated clouds and eventually the randomly moving birds.</p>
 									<p>Heres a sample of the code</p>
-									<pre><code>{
-	float sampleX = (x - halfWidth) / scale * frequency + octaveOffsets[i].x;
-	float sampleY = (y - halfHeight) / scale * frequency + octaveOffsets[i].y;
+									<pre><code>void Update()
+{
+	viewerPosition = new Vector2(viewer.position.x, viewer.position.z);
 
-	float perlinValue = Mathf.PerlinNoise(sampleX, sampleY * 2 - 1);
-	noiseHeight += perlinValue * amplitude;
-
-	amplitude *= persistance;
-	frequency *= lacunarity;
+	if ((viewerPositionOld - viewerPosition).sqrMagnitude > sqrViewerMoveThresholdForChunkUpdate)
+	{
+		viewerPositionOld = viewerPosition;
+		UpdateVisibleChunks();
+	}
+}
 }</code></pre>
+										<p>This calculates the position of the viewer AKA the player so I can then load the chunks of terrain around it.</p>
+										<a href="https://github.com/HWSolomon/Environment" class="special">Github</a>
 								</section>
 							</div>
 						</section>
